@@ -1,0 +1,14 @@
+# basic python programe to get the sum of diagonals of a square matrix in the form of a list
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+        a=0
+        d=1
+        for i in range(len(mat)):
+            j=i # just added it to avoid confusion 
+            if j == len(mat[i]) - d:
+                a+=mat[i][j]
+            else:
+                a+=mat[i][j]
+                a+=mat[i][len(mat[i])-d]
+            d+=1
+        return (a)
