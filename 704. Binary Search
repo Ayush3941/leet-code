@@ -1,0 +1,23 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        
+        k = nums
+        low =0
+        high = len(k) -1
+        center  = (len(k) //2)
+        while True:
+            center  = (len(k) //2)
+            if k == []:
+                return(-1)
+            elif k[center] == target: 
+                return(low+center)
+
+            elif k[center] < target:
+                k=k[center+1:]
+                low+=(center +1)
+                continue
+            elif k[center] > target:
+                k=k[:center]
+                high-=(center+1)
+                continue
+             
