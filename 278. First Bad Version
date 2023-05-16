@@ -1,0 +1,16 @@
+# The isBadVersion API is already defined for you.
+# def isBadVersion(version: int) -> bool:
+
+class Solution:
+    def firstBadVersion(self, n: int) -> int:
+        
+        low =1
+        high = n
+        while True:
+            i = (high + low)//2
+            if isBadVersion(i) and not(isBadVersion(i-1)):
+                return(i)
+            elif not(isBadVersion(i)):
+                low = (i+1)
+            elif isBadVersion(i):
+                high = (i-1)
